@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct MissionView: View {
+struct MissionItemView: View {
     let mission: Mission
     var body: some View {
         HStack {
@@ -28,8 +28,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(missions) { mission in
-                NavigationLink(destination: Text("Detail View")) {
-                    MissionView(mission: mission)
+                NavigationLink(destination: MissionView(mission: mission, astronauts: astronauts)) {
+                    MissionItemView(mission: mission)
                 }
             }
             .navigationBarTitle("MoonShot")
